@@ -4,23 +4,25 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title> Loan Calculator</title>
+  <title> Loan Calculator</title>
+    <link rel="stylesheet" type="text/css" href="kyle.css"/>
+        
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
         <h2>Kyle Boyda&#39;s Loan Calculator</h2>
-        Loan Amount*:
+        Loan Amount:
         <asp:TextBox ID="tb_loanAmount" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="red" ErrorMessage="Please enter a Loan Amount." ControlToValidate="tb_loanAmount"></asp:RequiredFieldValidator>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="red" ErrorMessage="* Please enter a Loan Amount." ControlToValidate="tb_loanAmount"></asp:RequiredFieldValidator>
         <br />
-        Annual Interest %*: <asp:TextBox ID="tb_annInterest" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="red" ErrorMessage="Please enter an Annual Interest %." ControlToValidate="tb_annInterest"></asp:RequiredFieldValidator>
+        Annual Interest %: <asp:TextBox ID="tb_annInterest" runat="server"></asp:TextBox>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="red" ErrorMessage="*Please enter an Annual Interest %." ControlToValidate="tb_annInterest"></asp:RequiredFieldValidator>
         <br />
-        Loan Terms (Years)*:
+        Loan Terms (Years):
         <asp:TextBox ID="tb_loanTerms" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="red" ErrorMessage="Please enter the number of Loan Terms." ControlToValidate="tb_loanTerms"></asp:RequiredFieldValidator>
+        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" CssClass="red" ErrorMessage="* Please enter the number of Loan Terms." ControlToValidate="tb_loanTerms"></asp:RequiredFieldValidator>
         <br />
         <br />
         <asp:Button ID="btn_Calculate" runat="server" Text="Calculate" />
@@ -34,7 +36,7 @@
         
         
         <%If Not IsPostBack Then%>
-        <p>Welcome to the mortgage Calculator. Please fill in the following fields to calculate your monthly payment</p>
+        <p>Welcome to the Loan Calculator. Please fill in the fields to calculate your monthly payment.</p>
         <%Else%>
         <br />
         <asp:GridView ID="loanGridView" runat="server">
